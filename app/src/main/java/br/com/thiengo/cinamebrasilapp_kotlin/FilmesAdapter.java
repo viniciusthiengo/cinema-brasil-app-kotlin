@@ -1,6 +1,5 @@
 package br.com.thiengo.cinamebrasilapp_kotlin;
 
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +16,10 @@ import br.com.thiengo.cinamebrasilapp_kotlin.util.Font;
 
 
 public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder> {
-    private MainActivity activity;
+    private FilmesActivity activity;
     private ArrayList<Filme> filmes;
 
-    public FilmesAdapter( MainActivity activity, ArrayList<Filme> filmes){
+    public FilmesAdapter(FilmesActivity activity, ArrayList<Filme> filmes){
         this.activity = activity;
         this.filmes = filmes;
     }
@@ -45,7 +44,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView ivFilme;
         private TextView tvNome;
         private TextView tvQtdSalas;
@@ -58,8 +57,6 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
             tvQtdSalas = (TextView) itemView.findViewById(R.id.tv_qtd_salas);
             Font.setAmaticSC( tvQtdSalas );
             Font.setFascinateInline( tvNome );
-
-            itemView.setOnClickListener(this);
         }
 
         private void setDados( Filme filme ){
@@ -69,13 +66,6 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
             tvNome.setText( filme.getNome() );
             tvQtdSalas.setText( "Salas com o filme: " + filme.getNumSalas() );
-        }
-
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent( activity, DetalhesActivity.class );
-            intent.putExtra(Filme.KEY, filmes.get( getAdapterPosition() ));
-            activity.startActivity( intent );
         }
     }
 }

@@ -20,13 +20,13 @@ import br.com.thiengo.cinamebrasilapp_kotlin.data.Mock;
 import br.com.thiengo.cinamebrasilapp_kotlin.util.Font;
 
 
-public class MainActivity extends AppCompatActivity
+public class FilmesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_filmes);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         NavigationMenuView navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
-        navMenuView.addItemDecoration(new DividerItemDecoration( MainActivity.this,DividerItemDecoration.VERTICAL) );
+        navMenuView.addItemDecoration(new DividerItemDecoration( FilmesActivity.this,DividerItemDecoration.VERTICAL) );
 
         initRecycler();
 

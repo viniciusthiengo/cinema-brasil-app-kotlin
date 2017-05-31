@@ -9,7 +9,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_main"
+        layout="@layout/app_bar_filmes"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -20,9 +20,8 @@
         android:layout_gravity="start"
         android:background="@color/colorPrimary"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
+        app:headerLayout="@layout/nav_header_filmes"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
-        app:menu="@menu/activity_main_drawer"
-        app:theme="@style/AppTheme.NavigationItem"/>
+        app:menu="@menu/activity_filmes_drawer" />
 </android.support.v4.widget.DrawerLayout>
